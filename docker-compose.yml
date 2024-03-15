@@ -5,6 +5,9 @@ networks:
     driver: bridge
     name: ase-network
 
+volumes:
+  file-data:
+
 services:
   ase-contribute-service:
     image: jingyijun3104/ase_contribute_service:lab1-v1
@@ -64,6 +67,8 @@ services:
     networks:
       - ase-network
     container_name: ase-file-service
+    volumes:
+      - file-data:/root/upload
 
   ase-gateway:
     image: huajuan6848/ase_gateway:yys-lab1
