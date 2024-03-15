@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
 
@@ -50,7 +51,7 @@ public class ContributeServiceImpl {
         iUserConferenceRoleService.addRoleToUserInConference(in.getUsername(), in.getConferenceName(), ConferenceRole.AUTHOR);
         Contribution contribution = new Contribution(in.getUsername(),
                 in.getRealName(), in.getConferenceName(), in.getTitle(),
-                in.getAbstractContent(), in.getEssayId(), sdf.format(LocalDateTime.now()));
+                in.getAbstractContent(), in.getEssayId(), sdf.format(new Date()));
         contributeRepository.save(contribution);
 
         return null;
