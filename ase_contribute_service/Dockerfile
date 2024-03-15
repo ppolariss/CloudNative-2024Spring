@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN chmod +x ./mvnw
+
 RUN ./mvnw clean package -pl ase_contribute_service -am -DskipTests
 
 FROM openjdk:17-jdk
