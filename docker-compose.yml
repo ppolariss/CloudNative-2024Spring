@@ -3,6 +3,7 @@ version: '3'
 networks:
   ase-network:
     driver: bridge
+    name: ase-network
 
 services:
   ase-contribute-service:
